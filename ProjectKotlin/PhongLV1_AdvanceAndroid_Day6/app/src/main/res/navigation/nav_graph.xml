@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.navigationapplication.navigation.fragment.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_signUpFragment2"
+            app:destination="@id/signUpFragment"/>
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.navigationapplication.navigation.fragment.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.navigationapplication.navigation.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_profilePictureFragment"
+            app:destination="@id/profilePictureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilePictureFragment"
+        android:name="com.example.navigationapplication.navigation.fragment.ProfilePictureFragment"
+        android:label="fragment_profile_picture"
+        tools:layout="@layout/fragment_profile_picture" >
+        <action
+            android:id="@+id/action_profilePictureFragment_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:popUpTo="@id/homeActivity"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.navigationapplication.navigation.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:popUpTo="@id/homeActivity"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.navigationapplication.navigation.fragment.HomeActivity"
+        android:label="HomeActivity" />
+</navigation>
